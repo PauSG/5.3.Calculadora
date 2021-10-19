@@ -7,9 +7,28 @@
         mc:Ignorable="d"
         Icon="assets/Icono.ico"
         Title="5.3.Calculadora" MinHeight="350" Height="550" MinWidth="250" Width="450">
+    <Window.Resources>
+        <Style TargetType="{x:Type Grid}">
+            <Setter Property="Margin" Value="5"/>
+        </Style>
+        <Style TargetType="{x:Type Button}">
+            <Setter Property="Margin" Value="5"/>
+            <EventSetter Event="Click" Handler="Button_Click"/>
+        </Style>
+        <Style TargetType="{x:Type Border}" x:Key="borde">
+            <Setter Property="Margin" Value="5"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="BorderBrush" Value="Black"/>
+            <Setter Property="Margin" Value="5"/>
+        </Style>
+        <Style TargetType="{x:Type TextBlock}" x:Key="CajaNumeros">
+            <Setter Property="TextAlignment" Value="Right"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+        </Style>
+        
+    </Window.Resources>
     <Grid>
-        <!-- <Viewbox> -->
-            <Grid Margin="5">
+        <Grid>
             <Grid.RowDefinitions>
                 <RowDefinition Height="2*"></RowDefinition>
                 <RowDefinition></RowDefinition>
@@ -22,63 +41,62 @@
                 <ColumnDefinition/>
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
-            <Border  Margin="5" BorderThickness="1" BorderBrush="Black" HorizontalAlignment="Stretch" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3">
+            <Border Style="{StaticResource borde}" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3">
                 <Viewbox HorizontalAlignment="Right">
-                <TextBlock x:Name="NumerosTextBlock" TextAlignment="Right" VerticalAlignment="Center"></TextBlock>
+                <TextBlock Style="{StaticResource CajaNumeros}" x:Name="NumerosTextBlock"></TextBlock>
                 </Viewbox>
             </Border>
-            <Button Tag="1"  Margin="5" Grid.Row="1" Grid.Column="0" Click="Button_Click">
+            <Button Tag="1" Grid.Row="1" Grid.Column="0">
                 <Viewbox>
                     <TextBlock>1</TextBlock>
                 </Viewbox>
             </Button>
-            <Button Tag="2" Margin="5" Grid.Row="1" Grid.Column="1" Click="Button_Click">
+            <Button Tag="2" Grid.Row="1" Grid.Column="1">
                 <Viewbox>
                     <TextBlock>2</TextBlock>
                 </Viewbox>
             </Button>
-            <Button Tag="3" Margin="5" Grid.Row="1" Grid.Column="2" Click="Button_Click">
+            <Button Tag="3" Grid.Row="1" Grid.Column="2">
                 <Viewbox>
                     <TextBlock>3</TextBlock>
                 </Viewbox>
             </Button>
-            <Button Tag="4" Margin="5" Grid.Row="2" Grid.Column="0" Click="Button_Click">
+            <Button Tag="4" Grid.Row="2" Grid.Column="0">
                 <Viewbox>
                     <TextBlock>4</TextBlock>
                 </Viewbox>
             </Button>
-            <Button Tag="5" Margin="5" Grid.Row="2" Grid.Column="1" Click="Button_Click">
+            <Button Tag="5" Grid.Row="2" Grid.Column="1">
                 <Viewbox>
                     <TextBlock>5</TextBlock>
                 </Viewbox>
             </Button>
-            <Button Tag="6" Margin="5" Grid.Row="2" Grid.Column="2" Click="Button_Click">
+            <Button Tag="6" Grid.Row="2" Grid.Column="2">
                 <Viewbox>
                     <TextBlock>6</TextBlock>
                 </Viewbox>
             </Button>
-            <Button Tag="7" Margin="5" Grid.Row="3" Grid.Column="0" Click="Button_Click">
+            <Button Tag="7" Grid.Row="3" Grid.Column="0">
                 <Viewbox>
                     <TextBlock>7</TextBlock>
                 </Viewbox>
             </Button>
-            <Button Tag="8" Margin="5" Grid.Row="3" Grid.Column="1" Click="Button_Click">
+            <Button Tag="8" Grid.Row="3" Grid.Column="1">
                 <Viewbox>
                     <TextBlock>8</TextBlock>
                 </Viewbox>
             </Button>
-            <Button Tag="9" Margin="5" Grid.Row="3" Grid.Column="2" Click="Button_Click">
+            <Button Tag="9" Grid.Row="3" Grid.Column="2">
                 <Viewbox>
                     <TextBlock>9</TextBlock>
                 </Viewbox>
             </Button>
-            <Button Tag="0" Margin="5" Grid.Row="4" Grid.ColumnSpan="3" Click="Button_Click">
+            <Button Tag="0" Grid.Row="4" Grid.ColumnSpan="3">
                 <Viewbox>
                     <TextBlock>0</TextBlock>
                 </Viewbox>
             </Button>
 
         </Grid>
-       <!-- </Viewbox> -->
     </Grid>
 </Window>
